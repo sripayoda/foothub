@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h1 class="mb-4">Cart</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Product</th>
+                                    <th></th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of cart">
+                                    <td>{{p.pName}}</td>
+                                    <td>{{p.price | currency: 'INR'}}</td>
+                                    <td><button class="btn btn-danger btn-sm" (click)="removeproduct(p.pId)">Remove</button></td>
+                                </tr>   
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-3">Total</h4>
+                    <p>{{totalPrice | currency : 'INR'}}</p>
+                    <button class="btn btn-primary btn-block" (click)="buy()">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

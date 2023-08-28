@@ -1,0 +1,16 @@
+.login-container {
+    flex: 1;
+    color: white;
+    width: max-content;
+  }
+.login-box {
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+.form-group {
+    margin-bottom: 1rem;
+}

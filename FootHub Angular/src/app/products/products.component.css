@@ -1,0 +1,116 @@
+@media (max-width: 991.98px) {
+    /* Apply styles for screens up to medium size (991.98px) */
+    .navbar-nav {
+      flex-direction: row; /* Change flex direction to horizontal */
+    }
+    .navbar-nav .nav-item {
+      margin-right: 10px; /* Add some spacing between items */
+    }
+    .search-bar {
+      margin: 10px auto; /* Adjust margin for the search bar */
+    }
+  }
+
+  .filter-container {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Add this CSS */
+  .filter-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .filter-container li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .filter-container label {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .filter-container select {
+    flex: 2;
+  }
+
+  .filter-dropdown {
+    cursor: pointer;
+    border: 1px solid #343a40;
+    padding-left: 20%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .filter-dropdown:hover {
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  .filter-dropdown::after {
+    content: "\25BC"; /* Unicode character for down arrow */
+    margin-left: auto;
+    margin-right: 10px;
+    margin-left: auto;
+  }
+  ul .filter-options {
+    display: none;
+    margin-top: 10px;
+    list-style: none;
+  }
+  ul .filter-options.active {
+    display: block;
+    padding-left: 30%;
+  }
+  ul .filter-options li {
+    margin-bottom: 5px;
+  }
+  ul .filter-options input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .apply-button{
+    padding-top: 2rem;
+  }
+  .product-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  .product-card .card {
+    flex: 1 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+  }
+  .product-card .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 200px; 
+    object-fit: fill; 
+  }
+
+  @media (max-width: 991px) {
+    .product-card .card {
+      flex: 1 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .product-card .card {
+      flex: 1 0 100%;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  div#filterAccordian{
+    margin-bottom: 1rem;;
+  }

@@ -1,0 +1,115 @@
+<div class="content">
+    <div class="container">
+      <div class="row" style="min-height: 100vmax; flex: 1;">
+        <div class="col-md-3">
+          <div class="filter-container">
+            <h4>
+              Filters
+              <button class="btn btn-secondary d-lg-none" style="padding-top: 0%" type="button" data-bs-toggle="collapse" data-bs-target="#filterContainer" aria-expanded="false" aria-controls="filterContainer">
+                &#x2B9F;
+              </button>
+            </h4>
+              <div class="collapse d-md-block" id="filterContainer">
+                <ul>
+                  <div class="accordion" id="filterAccordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="occasionHeading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#occasionCollapse" aria-expanded="true" aria-controls="occasionCollapse">
+                          Occasion
+                        </button>
+                      </h2>
+                      <div id="occasionCollapse" class="accordion-collapse collapse show" aria-labelledby="occasionHeading">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            <li *ngFor="let product of occasion">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" (change)="filterProducts($event)" [id]="product.oId">
+                                <label class="form-check-label" for="{{ product.oId }}">
+                                  {{ product.oName }}
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion" id="filterAccordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="typeHeading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#typeCollapse" aria-expanded="true" aria-controls="typeCollapse">
+                          Type
+                        </button>
+                      </h2>
+                      <div id="typeCollapse" class="accordion-collapse collapse show" aria-labelledby="typeHeading">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            <li *ngFor="let product of productType">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" (change)="filterProducts($event)" [id]="product.tId">
+                                <label class="form-check-label" for="{{ product.tId }}">
+                                  {{ product.tName }}
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion" id="filterAccordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="typeHeading">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#typeCollapse" aria-expanded="true" aria-controls="typeCollapse">
+                          Brand
+                        </button>
+                      </h2>
+                      <div id="typeCollapse" class="accordion-collapse collapse show" aria-labelledby="typeHeading">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            <li *ngFor="let product of brand">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" (change)="filterProducts($event)" [id]="product.bId">
+                                <label class="form-check-label" for="{{ product.bId }}">
+                                  {{ product.bName }}
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="apply-button">
+                    <button class="btn btn-primary" type="submit" (click)="getFilterDatas()">
+                      Apply
+                    </button>
+                  </div>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="product-card">
+            <div class="card" *ngFor="let product of temp">
+              <a routerLink="/productdisplay/{{product.pId}}"
+                ><img
+                  src="assets/images/{{product.pImage}}"
+                  class="card-img-top"
+                  alt="Product 1"
+              /></a>
+              <div class="card-body">
+                <h5 class="card-title">{{product.pName}}</h5>
+                <p class="card-text">
+                  {{product.pDisc}}<br>
+                  Price: &#x20B9; {{product.price}}
+                </p>
+                <a class="btn btn-primary" routerLink="/productdisplay/{{product.pId}}">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <app-footer></app-footer>

@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #343a40;
+    font-size: large;
+    font-weight: bold;
+  }
+  .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  .search-bar {
+    margin: 20px auto;
+  }
+  @media (max-width: 991.98px) {
+    /* Apply styles for screens up to medium size (991.98px) */
+    .navbar-nav {
+      flex-direction: row; /* Change flex direction to horizontal */
+    }
+    .navbar-nav .nav-item {
+      margin-right: 10px; /* Add some spacing between items */
+    }
+    .search-bar {
+      margin: 10px auto; /* Adjust margin for the search bar */
+    }
+  }

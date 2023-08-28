@@ -1,0 +1,66 @@
+<div *ngIf="prof_or_update==1" class="container" style="height: 100vh;">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center">Profile</h2>
+          </div>
+          <div class="card-body">
+            <img class="mx-auto" src="assets/profile.svg" >
+            <div class="mb-3" style="text-align: center;">
+              <!-- <label for="username" class="form-label">Username</label> -->
+              <!-- <input type="text" class="form-control" id="username" [(ngModel)]="name"> -->
+              <h3 [innerText]="name"></h3>
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <!-- <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="phno"> -->
+              <p [innerText]="phno"></p>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <!-- <input type="email" class="form-control" id="email" [(ngModel)]="mail"> -->
+              <p [innerText]="mail"></p>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" id="editProfileBtn" (click)="update1()">Edit Profile</button>
+              <button class="btn btn-primary" id="editProfileBtn" (click)="cart()">view cart</button>
+              <button class="btn btn-danger" id="deleteAccountBtn" (click)="del()">Delete Account</button>
+              <button *ngIf="delstatus" class="btn btn-danger" id="deleteAccountBtn" (click)="del2()">Confirm Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="prof_or_update==2" class="container mt-5" style="height: 100vh;">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">Profile</h3>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="name">
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="phno">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="mail">
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" id="editProfileBtn" (click)="update2()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>

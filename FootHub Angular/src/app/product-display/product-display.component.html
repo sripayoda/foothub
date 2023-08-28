@@ -1,0 +1,23 @@
+<div class="content">
+    <div class="container" *ngFor="let d of temp">
+        <a class="btn btn-secondary back-button" routerLink="/products/{{d.categoryName}}">&lt; Back to Products</a>
+        <h2>Product Details</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="assets/images/{{d.pImage}}" alt="Product Image" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h4>{{d.pName}}</h4>
+                <p>{{d.pDisc}}</p>
+                <p><strong>Price:</strong>{{d.price}}</p>
+                <p><strong>Size:</strong> {{d.size}}</p>
+                <h4 style="text-decoration: underline;">Product Description</h4><br>
+                <p><strong>Brand</strong> {{brand_name}} Which stands as an embodiment of excellence, a symbol of trust that has become synonymous with quality and innovation.</p>
+                <p><strong>Type </strong> Celebrate the Moments with {{product_type}} A time to come together, to honor tradition, and to create cherished memories.</p>
+                <p><strong>Ocassion</strong> Our commitment to pushing boundaries and setting new industry standards is woven into every {{occasion_name}} we create.</p>
+                <button type="button" class="btn btn-primary" style="margin-right: 3px;" (click)="buy()">Buy</button>
+                <button type="button" class="btn btn-primary" (click)="addCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

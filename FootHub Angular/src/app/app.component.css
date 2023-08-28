@@ -1,0 +1,12 @@
+.body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 7rem;
+  }
+  .content-area
+  {
+    margin-top: 4rem;
+    height: 100vh;
+    display: block;
+  }
